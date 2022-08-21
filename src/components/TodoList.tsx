@@ -15,7 +15,7 @@ const TodoList = () => {
       <TodoListStats />
       <TodoItemCreator />
       {todoList.map((item) => (
-        <TodoItem item={item} />
+        <TodoItem key={item.id} item={item} />
       ))}
     </>
   )
