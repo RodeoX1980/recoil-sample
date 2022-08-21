@@ -3,7 +3,7 @@ import { useRecoilValue } from "recoil";
 import { todoListState } from "@/atom/atom";
 import TodoListStats from "@/components/TodoListStats";
 import TodoItemCreator from "@/components/TodoItemCreator";
-import TodoItem from "./TodoItem";
+import TodoItem from "@/components/TodoItem";
 
 const TodoList = () => {
   const todoList = useRecoilValue(todoListState);
