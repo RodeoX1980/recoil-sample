@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 import { RecoilRoot } from 'recoil'
 import TodoList from '@/components/TodoList'
 
