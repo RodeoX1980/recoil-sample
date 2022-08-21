@@ -1,8 +1,9 @@
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilValue } from "recoil";
 
 import { todoListState } from "@/atom/atom";
 import TodoListStats from "@/components/TodoListStats";
 import TodoItemCreator from "@/components/TodoItemCreator";
+import TodoItem from "@/components/TodoItem";
 
 const TodoList = () => {
   const todoList = useRecoilValue(todoListState);
@@ -13,7 +14,7 @@ const TodoList = () => {
       <TodoListStats />
       <TodoItemCreator />
       {todoList.map((item) => (
-        <div key={item.id}>{item.title}</div>
+        <TodoItem id={item.id} title={item.title} />
       ))}
     </>
   )
