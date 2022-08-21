@@ -4,7 +4,7 @@ export const todoListState = atom({
   key: "todoListState",
   default: [
     {
-      id: 1,
+      id: 0,
       title: 'メール送信',
       isCompleted: false,
     }

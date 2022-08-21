@@ -29,7 +29,7 @@ const TodoItem = ({ item }: Props) => {
   }
 
   return (
-    <div key={item.id}>
+    <div>
       <button onClick={toggleItemCompletion}>
         {item.isCompleted ? '完' : '未'}
       </button>
