@@ -1,12 +1,11 @@
 import { selector } from "recoil";
-import { todoListState } from "@/atom/atom";
+import { todoListFilterState, todoListState } from "@/atom/atom";
 
 type counts = {
   totalNum: number;
   totalCompletedNum: number;
   totalUncompletedNum: number;
 }
-
 
 export const todoListStateSelector = selector({
   key: "todoListStateSelector",
@@ -23,4 +22,20 @@ export const todoListStateSelector = selector({
   }
 })
 
+export const filteredTodoListState = selector({
+  key: 'filteredTodoListState',
+  get: ({ get }) => {
+    const filter = get(todoListFilterState);
+    const list = get(todoListState);
+
+    switch (filter) {
+      case '01':
+        return list.filter((item) => item.isCompleted);
+      case '02':
+        return list.filter((item) => !item.isCompleted);
+      default:
+        return list;
+    }
+  },
+});
 
